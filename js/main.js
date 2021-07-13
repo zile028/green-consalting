@@ -1,14 +1,60 @@
+$(".owl-carousel.owl-usluge").owlCarousel({
+  loop: true,
+  margin: 0,
+  nav: true,
+  dots: false,
+  autoplay: true,
+  navText: ["", "Listaj<br>dalje"],
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 1,
+    },
+    1000: {
+      items: 1,
+    },
+  },
+});
+
+$(".owl-carousel.owl-header").owlCarousel({
+  loop: true,
+  margin: 0,
+  nav: false,
+  dots: false,
+  autoplay: true,
+  animateOut: "fadeOut",
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 1,
+    },
+    1000: {
+      items: 1,
+    },
+  },
+});
+
 /* selectors */
 let nav = document.querySelector("nav");
 let hamburgerMenu = nav.querySelector(".hamburgerMenu");
 let navMenu = hamburgerMenu.nextElementSibling;
 let menuLinks = navMenu.querySelectorAll("li");
+
 let anchor = [];
 
 /* listeners */
 window.addEventListener("scroll", checkScroll);
 window.addEventListener("resize", hideMenu);
 hamburgerMenu.addEventListener("click", showMenu);
+
+function showNextDesc(e) {
+  e.preventDefault();
+  console.log("test");
+}
 
 function initialiseLinks() {
   menuLinks.forEach((li) => {
